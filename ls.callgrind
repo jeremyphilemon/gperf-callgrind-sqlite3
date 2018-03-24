@@ -1,0 +1,1169 @@
+events: Hits
+
+fl=(1) /build/glibc-Cl5G7W/glibc-2.23/csu/../csu/libc-start.c
+fn=(1) __libc_start_main
+cfl=(2) /home/jessie/archive/archive2/3/test.cpp
+cfn=(2) main
+calls=1103 27
+291 1103
+
+fl=(3) /build/glibc-Cl5G7W/glibc-2.23/math/../sysdeps/i386/fpu/fenv_private.h
+fn=(3) libc_feholdsetround_sse_ctx[inline]
+430 4
+
+fl=(3)
+fn=(3)
+433 2
+
+fl=(3)
+fn=(4) libc_feresetround_sse_ctx[inline]
+445 1
+
+fl=(4) /build/glibc-Cl5G7W/glibc-2.23/math/../sysdeps/ieee754/dbl-64/e_log.c
+fn=(5) __ieee754_log_avx
+58 224
+
+fl=(4)
+fn=(5)
+77 6
+
+fl=(4)
+fn=(5)
+78 8
+
+fl=(4)
+fn=(5)
+81 1
+
+fl=(4)
+fn=(5)
+96 4
+
+fl=(4)
+fn=(5)
+97 11
+
+fl=(4)
+fn=(5)
+101 1
+
+fl=(4)
+fn=(5)
+107 1
+
+fl=(4)
+fn=(5)
+108 1
+
+fl=(4)
+fn=(5)
+111 1
+
+fl=(4)
+fn=(5)
+114 1
+
+fl=(4)
+fn=(5)
+116 2
+
+fl=(4)
+fn=(5)
+119 1
+
+fl=(4)
+fn=(5)
+122 2
+
+fl=(4)
+fn=(5)
+148 1
+
+fl=(4)
+fn=(5)
+168 6
+
+fl=(4)
+fn=(5)
+169 3
+
+fl=(4)
+fn=(5)
+170 6
+
+fl=(4)
+fn=(5)
+172 1
+
+fl=(4)
+fn=(5)
+179 5
+
+fl=(4)
+fn=(5)
+180 1
+
+fl=(4)
+fn=(5)
+183 5
+
+fl=(4)
+fn=(5)
+184 5
+
+fl=(4)
+fn=(5)
+187 22
+
+fl=(4)
+fn=(5)
+188 10
+
+fl=(4)
+fn=(5)
+189 7
+
+fl=(4)
+fn=(5)
+190 6
+
+fl=(4)
+fn=(5)
+193 59
+
+fl=(4)
+fn=(5)
+196 15
+
+fl=(4)
+fn=(5)
+197 36
+
+fl=(4)
+fn=(5)
+198 11
+
+fl=(4)
+fn=(5)
+200 4
+
+fl=(4)
+fn=(5)
+201 9
+
+fl=(4)
+fn=(5)
+202 6
+
+fl=(4)
+fn=(5)
+203 4
+
+fl=(4)
+fn=(5)
+207 22
+
+fl=(4)
+fn=(5)
+219 1
+
+fl=(4)
+fn=(5)
+258 7
+
+fl=(5) /build/glibc-Cl5G7W/glibc-2.23/math/../sysdeps/ieee754/dbl-64/s_sin.c
+fn=(6) do_cos[inline]
+154 2
+
+fl=(5)
+fn=(6)
+156 6
+
+fl=(5)
+fn=(6)
+157 14
+
+fl=(5)
+fn=(6)
+159 1
+
+fl=(5)
+fn=(7) do_cos_slow.isra.1
+179 2
+
+fl=(5)
+fn=(8) do_sin[inline]
+202 2
+
+fl=(5)
+fn=(8)
+205 5
+
+fl=(5)
+fn=(8)
+207 2
+
+fl=(5)
+fn=(9) do_sin_slow[inline]
+220 2
+
+fl=(5)
+fn=(9)
+227 2
+
+fl=(5)
+fn=(9)
+233 1
+
+fl=(5)
+fn=(10) reduce_sincos_1[inline]
+279 2
+
+fl=(5)
+fn=(10)
+282 1
+
+fl=(5)
+fn=(11) do_sincos_1[inline]
+316 2
+
+fl=(5)
+fn=(11)
+317 1
+
+fl=(5)
+fn=(11)
+318 1
+
+fl=(5)
+fn=(11)
+327 1
+
+fl=(5)
+fn=(11)
+cfl=(5)
+cfn=(8)
+calls=2 202
+332 2
+
+fl=(5)
+fn=(11)
+cfl=(5)
+cfn=(8)
+calls=2 207
+332 2
+
+fl=(5)
+fn=(11)
+cfl=(5)
+cfn=(8)
+calls=5 205
+332 5
+
+fl=(5)
+fn=(11)
+333 2
+
+fl=(5)
+fn=(11)
+335 1
+
+fl=(5)
+fn=(11)
+cfl=(5)
+cfn=(6)
+calls=1 159
+348 1
+
+fl=(5)
+fn=(11)
+cfl=(5)
+cfn=(6)
+calls=2 157
+348 2
+
+fl=(5)
+fn=(11)
+351 2
+
+fl=(5)
+fn=(12) __sin_avx
+467 8
+
+fl=(5)
+fn=(12)
+cfl=(3)
+cfn=(3)
+calls=4 430
+474 4
+
+fl=(5)
+fn=(12)
+cfl=(3)
+cfn=(3)
+calls=2 433
+474 2
+
+fl=(5)
+fn=(12)
+cfl=(3)
+cfn=(4)
+calls=1 445
+474 1
+
+fl=(5)
+fn=(12)
+478 3
+
+fl=(5)
+fn=(12)
+479 1
+
+fl=(5)
+fn=(12)
+490 25
+
+fl=(5)
+fn=(12)
+491 7
+
+fl=(5)
+fn=(12)
+493 20
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(13) slow[inline]
+calls=1 686
+493 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(13)
+calls=4 685
+493 4
+
+fl=(5)
+fn=(12)
+496 1
+
+fl=(5)
+fn=(12)
+498 1
+
+fl=(5)
+fn=(12)
+499 1
+
+fl=(5)
+fn=(12)
+501 6
+
+fl=(5)
+fn=(12)
+502 7
+
+fl=(5)
+fn=(12)
+503 8
+
+fl=(5)
+fn=(12)
+504 2
+
+fl=(5)
+fn=(12)
+509 1
+
+fl=(5)
+fn=(12)
+510 3
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(14) slow1[inline]
+calls=5 710
+512 5
+
+fl=(5)
+fn=(12)
+512 27
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(14)
+calls=1 711
+512 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(14)
+calls=2 707
+512 2
+
+fl=(5)
+fn=(12)
+516 1
+
+fl=(5)
+fn=(12)
+520 2
+
+fl=(5)
+fn=(12)
+528 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(6)
+calls=12 157
+530 12
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(6)
+calls=2 154
+530 2
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(6)
+calls=6 156
+530 6
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(15) slow2[inline]
+calls=2 746
+531 2
+
+fl=(5)
+fn=(12)
+531 12
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(15)
+calls=1 733
+531 1
+
+fl=(5)
+fn=(12)
+536 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(10)
+calls=1 282
+539 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(10)
+calls=2 279
+539 2
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=3 348
+540 3
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=1 318
+540 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=9 332
+540 9
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=1 317
+540 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=1 335
+540 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=1 327
+540 1
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=2 333
+540 2
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=2 351
+540 2
+
+fl=(5)
+fn=(12)
+cfl=(5)
+cfn=(11)
+calls=2 316
+540 2
+
+fl=(5)
+fn=(12)
+566 6
+
+fl=(5)
+fn=(13)
+685 4
+
+fl=(5)
+fn=(13)
+686 1
+
+fl=(5)
+fn=(14)
+707 2
+
+fl=(5)
+fn=(14)
+cfl=(5)
+cfn=(9)
+calls=1 233
+710 1
+
+fl=(5)
+fn=(14)
+cfl=(5)
+cfn=(9)
+calls=2 227
+710 2
+
+fl=(5)
+fn=(14)
+cfl=(5)
+cfn=(9)
+calls=2 220
+710 2
+
+fl=(5)
+fn=(14)
+711 1
+
+fl=(5)
+fn=(15)
+733 1
+
+fl=(5)
+fn=(15)
+cfl=(5)
+cfn=(7)
+calls=2 179
+746 2
+
+fl=(6) /build/glibc-Cl5G7W/glibc-2.23/math/w_log.c
+fn=(16) __log
+28 11
+
+fl=(6)
+fn=(16)
+42 3
+
+fl=(2)
+fn=(17) burn
+8 5
+
+fl=(2)
+fn=(17)
+9 95
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 499
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=7 258
+10 7
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=8 78
+10 8
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 516
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 107
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=2 122
+10 2
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=25 490
+10 25
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=3 539
+10 3
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=7 189
+10 7
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=5 179
+10 5
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=2 504
+10 2
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=6 566
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 479
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=20 530
+10 20
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 81
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=22 187
+10 22
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 119
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=11 97
+10 11
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=8 503
+10 8
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=6 168
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 536
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=3 510
+10 3
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=10 188
+10 10
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=15 196
+10 15
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=22 540
+10 22
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=7 491
+10 7
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=3 478
+10 3
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=4 203
+10 4
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 101
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=6 77
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=4 200
+10 4
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=2 116
+10 2
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=6 190
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=224 58
+10 224
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 219
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=25 493
+10 25
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 108
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=8 467
+10 8
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=7 502
+10 7
+
+fl=(2)
+fn=(17)
+cfl=(6)
+cfn=(16)
+calls=11 28
+10 11
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=11 198
+10 11
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=35 512
+10 35
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 528
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=9 201
+10 9
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=2 520
+10 2
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=5 183
+10 5
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=36 197
+10 36
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=7 474
+10 7
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=4 96
+10 4
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=22 207
+10 22
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=3 169
+10 3
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=5 184
+10 5
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 509
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 496
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=6 202
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 172
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 114
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 148
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=6 501
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=1 498
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 180
+10 1
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=59 193
+10 59
+
+fl=(2)
+fn=(17)
+cfl=(5)
+cfn=(12)
+calls=15 531
+10 15
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=6 170
+10 6
+
+fl=(2)
+fn=(17)
+cfl=(4)
+cfn=(5)
+calls=1 111
+10 1
+
+fl=(2)
+fn=(17)
+10 274
+
+fl=(2)
+fn=(17)
+cfl=(6)
+cfn=(16)
+calls=3 42
+10 3
+
+fl=(2)
+fn=(18) burn_for
+cfl=??
+cfn=(19) 0x3fef843a76005ee0
+calls=1 0
+20 1
+
+fl=(2)
+fn=(18)
+cfl=??
+cfn=(20) 0x3fdb205e44fde2a2
+calls=1 0
+20 1
+
+fl=(2)
+fn=(18)
+cfl=??
+cfn=(21) 0x3fdad67c8723c60d
+calls=1 0
+20 1
+
+fl=(2)
+fn=(18)
+cfl=??
+cfn=(22) 0x3fd09d6f99fb452d
+calls=1 0
+20 1
+
+fl=(2)
+fn=(18)
+cfl=(2)
+cfn=(17)
+calls=1016 10
+20 1016
+
+fl=(2)
+fn=(18)
+cfl=(2)
+cfn=(17)
+calls=95 9
+20 95
+
+fl=(2)
+fn=(18)
+cfl=(2)
+cfn=(17)
+calls=5 8
+20 5
+
+fl=(2)
+fn=(2)
+cfl=(2)
+cfn=(18)
+calls=1120 20
+27 1120
+
+fl=??
+fn=(20)
+cfl=??
+cfn=(23) _init
+calls=1 0
+0 1
+
+fl=??
+fn=(22)
+cfl=??
+cfn=(23)
+calls=1 0
+0 1
+
+fl=??
+fn=(24) _start
+cfl=(1)
+cfn=(1)
+calls=1052 291
+0 1052
+
+fl=??
+fn=(23)
+0 4
+
+fl=??
+fn=(21)
+cfl=??
+cfn=(23)
+calls=1 0
+0 1
+
+fl=??
+fn=(19)
+cfl=??
+cfn=(23)
+calls=1 0
+0 1
+
