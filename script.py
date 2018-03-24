@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
-from pstats import Stats
 from collections import OrderedDict
 from optparse import OptionParser
 from pprint import pprint
+from pstats import Stats
 import re
 
+# Schema definition
 def schema():
   print """
     PRAGMA journal_mode=OFF;
@@ -64,39 +65,25 @@ def schema():
     CREATE UNIQUE INDEX symbolsIndex ON symbols (id);
     CREATE INDEX totalCountIndex ON mainrows(cumulative_count);
 """
+# SQL statements
+INSERT_MAINROWS_QUERY="""INSERT INTO mainrows(id, self_count, cumulative_count, kids, self_calls, total_calls, self_paths, total_paths, pct) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"""
+INSERT_CHILDREN_QUERY="""INSERT INTO children(self_id, parent_id, from_parent_count, from_parent_calls, from_parent_paths, pct) VALUES(%s, %s, %s, %s, %s, %s);"""
+INSERT_PARENTS_QUERY="""INSERT INTO parents(self_id, child_id, to_child_count, to_child_calls, to_child_paths, pct) VALUES(%s, %s, %s, %s, %s, %s);"""
+INSERT_FILES_QUERY="""INSERT INTO files(name) VALUES("%s");"""
+INSERT_SYMBOLS_QUERY="""INSERT INTO symbols(id, name) VALUES(%s, "%s");"""
+INSERT_SUMMARY_TABLE = """INSERT INTO summary (counter, total_count, total_freq, tick_period) VALUES("PERF_TICKS", %s, %s, %s);"""
 
-INSERT_MAINROWS_QUERY="""INSERT INTO mainrows(id, self_count,
-                         cumulative_count, kids,
-                         self_calls, total_calls, self_paths, total_paths, pct)
-                         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"""
-INSERT_CHILDREN_QUERY="""INSERT INTO children(self_id, parent_id,
-                         from_parent_count, from_parent_calls, from_parent_paths, pct)
-                         VALUES(%s, %s, %s, %s, %s, %s);"""
-INSERT_PARENTS_QUERY="""INSERT INTO parents(self_id, child_id,
-                                            to_child_count, to_child_calls,
-                                            to_child_paths, pct)
-                         VALUES(%s, %s, %s, %s, %s, %s);"""
-INSERT_FILES_QUERY="""INSERT INTO files(name)
-                      VALUES("%s");"""
-INSERT_SYMBOLS_QUERY="""INSERT INTO symbols(id, name)
-                        VALUES(%s, "%s");"""
-INSERT_SUMMARY_TABLE = """INSERT INTO summary (counter, total_count,
-                                               total_freq, tick_period)
-                          VALUES("PERF_TICKS", %s, %s, %s);"""
-
-
-files=[] #Done
-symbols=[] #Done
-mainrowsTupled=[]
-childrenTupled=[]
-parentsTupled=[]
+files=[]
+symbols=[]
 parents=[]
 children=[]
-
 mainrows={}
-
+childrenTupled=[]
+parentsTupled=[]
+mainrowsTupled=[]
 max=0;
 
+# Regex patterns
 filesRegex=re.compile(r'c?fl=(?:\(\d\))(\n|.*\n)')
 symbolsRegex=re.compile(r'(?:\b(?:c?fn)=(?:\(\d\)|..|(?:\S+))(?:\n|\s(\S+\n)))')
 fnRegex=re.compile(r'(?:\bc?fn=\((\d+)\))')
@@ -105,6 +92,7 @@ callsRegex=re.compile(r'(?:(calls=(?:(\d+)\s(\d+))))')
 pFunctionAlone=re.compile(r'(?:fn=\((\d)\)(\n|.+)?\n(?:(\d+)\s(\d+)))')
 twoRegex=re.compile(r'(?:\n(\d+)\s(\d+))')
 
+# Parent <-> Child function call counter
 def counter(object, resultTuple):
     cfn=x['child']
     pfn=x['parent']
@@ -128,6 +116,8 @@ if __name__ == "__main__":
   fBlock=open(filename)
   text=fBlock.read()
   fLine=open(filename)
+
+  # Data for files table
   line=fLine.readlines()
   for x in line:
     fileMatch=filesRegex.match(x)
@@ -136,6 +126,7 @@ if __name__ == "__main__":
 
   block=re.split(r"\n\n", text);
 
+  # Data for symbols table and initialising mainrows
   for x in block:
     functionIDMatch=fnRegex.findall(x)
     if functionIDMatch:
@@ -148,9 +139,8 @@ if __name__ == "__main__":
         if(len(symbolsMatch)>1):
           symbolName=symbolsMatch[1][:-1]
           mainrows[functionIDMatch[1]]={'count':0, 'name': symbolName, 'self-count':0, 'kids':0, 'pct': 0, 'parent': (), 'children': ()}
-
-  mainrowsChildren=mainrows
-        
+    
+  # Cumulative function call counter
   for x in block:
     functionIDMatch=fnRegex.findall(x)
     if functionIDMatch: 
@@ -165,6 +155,7 @@ if __name__ == "__main__":
         mainrows[fnk]['parent']+=(functionIDMatch[0], )
         mainrows[fn]['children']+=(functionIDMatch[1], )
 
+  # Tracing parents and children of each function and column calculation
   for i in range(1, len(mainrows)+1):
     fn=str(i)
     if(mainrows[fn]['count']>=max):
@@ -176,8 +167,7 @@ if __name__ == "__main__":
 
   mainrowsSorted=sorted(mainrows.items(), key=lambda t: int(t[0]))
 
-  schema()
-
+  # Tuples for mainrows table
   for x in mainrowsSorted:
     key=x[0]
     meta=x[1]
@@ -188,26 +178,19 @@ if __name__ == "__main__":
     for i in range(0, len(meta['children'])):
       parents.append({'parent': key, 'child': meta['children'][i], 'count':0, })
 
+  # Tuples for the children table
   for x in children:
     counter(x, childrenTupled)
 
+  # Tuples for the parents table
   for x in parents:
     counter(x, parentsTupled)
 
-  for x in files:
-  	print re.sub("\n[ ]*", "", INSERT_FILES_QUERY % x[1::])
-
-  for x in symbols:
-    print re.sub("\n[ ]*", "", INSERT_SYMBOLS_QUERY % x)
-
-  for x in mainrowsTupled:
-    print re.sub("\n[ ]*", "", INSERT_MAINROWS_QUERY % x)
-
-  for x in childrenTupled:
-      print re.sub("\n[ ]*", "", INSERT_CHILDREN_QUERY % x)
-
-  for x in parentsTupled:
-      print re.sub("\n[ ]*", "", INSERT_PARENTS_QUERY % x)
-
+  # SQL statements to stdout 
+  schema()
+  for x in files: print re.sub("\n[ ]*", "", INSERT_FILES_QUERY % x[1::])
+  for x in symbols: print re.sub("\n[ ]*", "", INSERT_SYMBOLS_QUERY % x)
+  for x in mainrowsTupled: print re.sub("\n[ ]*", "", INSERT_MAINROWS_QUERY % x)
+  for x in childrenTupled: print re.sub("\n[ ]*", "", INSERT_CHILDREN_QUERY % x)
+  for x in parentsTupled: print re.sub("\n[ ]*", "", INSERT_PARENTS_QUERY % x)
   print re.sub("\n[ ]*", "", INSERT_SUMMARY_TABLE % (max, 1, 1.0/100))
-
